@@ -65,8 +65,12 @@ class Game{
 
                          
                      }
+                     textSize(25);
+                     fill("white");
+                     text("Player 1 : "+allPlayers.player1.score,50,50);
+                     text("Player 2 : "+allPlayers.player2.score,50,100);
                     
-                     
+                     console.log(allPlayers);
                  
                  }
                 
@@ -102,7 +106,7 @@ class Game{
                     if(fruits.y == 500){
                         console.log("Hello");
                     }
-                     //fruitGroup.add(fruits);
+                     fruitGroup.add(fruits);
                    
                    /* for(var fruits in fruitGroup){
                         if (player.index !== null) {
@@ -115,6 +119,18 @@ class Game{
                            
                         }
                        }*/
+                       if(fruitGroup != null || fruitGroup != undefined){
+                           for(var i = 0;i < fruitGroup.maxDepth();i++){
+                            if(fruitGroup.get(i) != undefined){
+                                if(fruitGroup.get(i).isTouching(player1)||fruitGroup.get(i).isTouching(player2)){
+                                    fruitGroup.get(i).destroy();
+                                    
+                                    player.score = player.score + 1;
+                                    player.update();
+                                }
+                            }
+                           }
+                       }
                  }
                  
                   

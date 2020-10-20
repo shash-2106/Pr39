@@ -12,6 +12,8 @@ var fruitGroup;
 var fruit1_img, fruit2_img, fruit3_img, fruit4_img, fruit5_img;
 var player_img;
 
+var p1Score, p2Score;
+
 
 function preload(){
   back_img = loadImage("images/jungle.jpg");
@@ -21,7 +23,7 @@ function preload(){
   fruit3_img = loadImage("images/melon2.png");
   fruit4_img = loadImage("images/orange2.png");
   fruit5_img = loadImage("images/pineapple2.png");
-  //fruitGroup = new Group();
+  
 }
 function setup() {
   createCanvas(1000, 600);
@@ -30,6 +32,7 @@ function setup() {
   game.getState();
   game.start();
   
+  fruitGroup = new Group();
 }
 
 function draw() {
@@ -46,4 +49,7 @@ function draw() {
     
      game.end();
    }
+
+   text()
+   
 }
